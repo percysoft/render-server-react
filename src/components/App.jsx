@@ -22,11 +22,15 @@ class App extends Component{
 
   render() {
     var users = this.state.users.map((user, i) => {
-      return <li key={i}>{user.title}</li>
+      return (<div>
+          <li key={i}>{user.title}</li>
+          <li>{user.url}</li>
+          <img src={user.url}/>
+        </div>);
     });
     return(
       <div>
-        <h1>Mi Aplicación Modificada</h1>
+        <h1>Consumiendo Api Rest</h1>
         <ul>
           {users}
         </ul>
